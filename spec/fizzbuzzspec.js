@@ -1,25 +1,48 @@
-describe("fizzbuzz", function() {
+describe('FizzBuzz', function() {
 
-  it("returns 'fizz' when passed 3", function() {
+  var fizzBuzz;
 
-    expect(fizzbuzz(3)).toEqual('fizz');
+  beforeEach(function() {
+    fizzBuzz = new FizzBuzz();
   });
 
-  it("returns 'buzz' when passed 5", function() {
+  describe('multiples of 3', function() {
+    it('fizzes for 3', function() {
+      expect(fizzBuzz.play(3)).toEqual('fizz');
+    });
 
-    expect(fizzbuzz(5)).toEqual('buzz');
+    it('fizzes for 6', function() {
+      expect(fizzBuzz.play(6)).toEqual('fizz');
+    });
   });
 
-  it("returns 'buzz' when passed 25", function() {
+  describe('multiples of 5', function() {
+    it('buzzes for 5', function() {
+      expect(fizzBuzz.play(5)).toEqual('buzz');
+    });
 
-   expect(fizzbuzz(25)).toEqual('buzz')
- });
+    it('buzzes for 10', function() {
+      expect(fizzBuzz.play(10)).toEqual('buzz');
+    });
+  });
 
- it("returns '68' when passed 68", function() {
+  describe('multiples of 3 and 5', function() {
+    it('fizzbuzzes for 15', function() {
+      expect(fizzBuzz.play(15)).toEqual('fizzbuzz');
+    });
 
-  expect(fizzbuzz(68)).toEqual(68)
-});
+    it('fizzbuzzes for 30', function() {
+      expect(fizzBuzz.play(30)).toEqual('fizzbuzz');
+    });
+  });
 
+  describe('all other numbers', function() {
+    it('1 for 1', function() {
+      expect(fizzBuzz.play(1)).toEqual(1);
+    });
 
-
+    it('11 for 11', function() {
+      expect(fizzBuzz.play(11)).toEqual(11);
+    });
+  });
 });

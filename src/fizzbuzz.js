@@ -1,5 +1,7 @@
-function fizzbuzz(n) {
+function FizzBuzz() {
+}
 
+FizzBuzz.prototype.play = function(n) {
   if (n%3 == 0 && n%5 != 0) {
     return "fizz";
 } else if (n%5 == 0 && n%3 != 0) {
@@ -9,5 +11,4 @@ function fizzbuzz(n) {
 } else {
   return n ;
 }
-
 }
